@@ -9,14 +9,14 @@ const getPokemons = (async (req, res) => {
 
 // Operaciópn que devuelve un pokemon determinado
 const getPokemon = (async (req, res) => {
-    const pokemon = await findPokemon(); // Aqui dentro pondremos el parámetro pokemon, que debería ser el nombre
+    const pokemon = await findPokemon(); // Aquí dentro pondremos el parámetro pokemon, que debería ser el nombre
 
     return res.status(200).json(pokemon);
 });
 
 // Operación que registra un nuevo pokemon en la base de datos
 const postPokemon = (async (req, res) => {
-    await registerPokemon() // Aqui dentro pondremos los datos que tendrán los pokemon
+    await registerPokemon() // Aquí dentro pondremos los datos que tendrán los pokemon
 
     return res.status(201).json({});
 });
