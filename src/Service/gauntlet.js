@@ -1,13 +1,13 @@
 import { db } from '../configuration/database.js';
 
-// Operación que devuelve todos los pokemon de la base de datos
-const findAllPokemon = (async () => {
+// Operación que devuelve todos los pokemon de la pokedex
+const getPokedex = (async () => {
     const result = await db('pokemon').select('*');
     return result;
 });
 
 // Operación que devuelve un pokemon determinado
-const findPokemon = (async (pokemonName) => {
+const findMonInDex = (async (pokemonName) => {
     const result = await db('pokemon').select('*').where({name: pokemonName}).first();
     return result;
 });
@@ -39,8 +39,8 @@ const removePokemon = (async (pokemonName) => {
 });
 
 export {
-    findAllPokemon,
-    findPokemon,
+    findAllInDex,
+    findMonInDex,
     registerPokemon,
     modifyPokemon,
     removePokemon,
