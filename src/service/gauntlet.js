@@ -1,21 +1,21 @@
-import { db } from '../configuration/database.js';
+import db from '../configuration/database.js';
 
 // Operación que devuelve todos los pokemon de la pokedex
-const getPokedex = (async () => {
-    const result = await db('pokemon').select('*');
+const findAllInDex = (async () => {
+    const result = await db('pokedex').select('*');
     return result;
 });
 
 // Operación que devuelve un pokemon determinado
-const findMonInDex = (async (pokemonName) => {
-    const result = await db('pokemon').select('*').where({name: pokemonName}).first();
+const findMonInDex = (async (pokemon_name) => {
+    const result = await db('pokedex').select('*').where({name: pokemon_name}).first();
     return result;
 });
 
 // Operación que registra un nuevo pokemon en la base de datos
-const registerPokemon = (async () => { // faltan los demás datos
-    const result = await db('pokemon').insert({
-        name: pokemonName,
+const registerPokemon = (async (pokemon_name) => { // faltan los demás datos
+    const result = await db('pokedex').insert({
+        name: pokemon_name,
         // aquí van los demás datos
     });
 

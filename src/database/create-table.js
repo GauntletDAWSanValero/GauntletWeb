@@ -1,4 +1,4 @@
-const db = require("../Configuration/Database");
+const db = require("../configuration/database");
 
 // función para crear las tablas si no las tienes creadas
 

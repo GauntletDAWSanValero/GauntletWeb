@@ -1,4 +1,4 @@
-const db = require("../Configuration/Database");
+const db = require("../configuration/database");
 
 /* todo: hay que insertar todos los demás datos, de momento esto solo borra los datos de type chart
     porqué no hay más datos insertados */

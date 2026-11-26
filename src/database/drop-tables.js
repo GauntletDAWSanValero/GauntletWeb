@@ -1,4 +1,4 @@
-const db = require("../Configuration/Database");
+const db = require("../configuration/database");
 
 // función para borrar las tablas. Usar con cuidado, especialmente si tenemos datos en la BBDD
 

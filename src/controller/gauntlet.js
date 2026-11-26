@@ -1,4 +1,4 @@
-import { findAllInDex, findMonInDex, registerPokemon, modifyPokemon, removePokemon } from '../Service/gauntlet';
+import { findAllInDex, findMonInDex, registerPokemon, modifyPokemon, removePokemon } from '../service/gauntlet';
 
 // Operación que devuelve todos los pokemons de la base de datos
 const getPokedex = (async (req, res) => {
@@ -9,7 +9,7 @@ const getPokedex = (async (req, res) => {
 
 // Operaciópn que devuelve un pokemon determinado
 const getMonInDex = (async (req, res) => {
-    const monindex = await findAllInDex(req.params.pokemon_name);
+    const monindex = await findMonInDex(req.params.pokemon_name);
 
     return res.status(200).json(monindex);
 });

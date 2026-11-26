@@ -1,4 +1,4 @@
-const db = require("../Configuration/Database");
+const db = require("../configuration/database");
 
 /*
     FIXME: Hay un hueco en la db, creo que es porque la lista empieza en 1 en vez de en 0. Pero es

@@ -1,6 +1,7 @@
+// FIXME: import express from 'express'; can't be declared outside of a module
 import express from 'express';
 
-import { gauntletRouter } from './Route/gauntlet.js';
+import { gauntletRouter } from './route/gauntlet.js';
 
 const app = express();
 app.use(express.json());
