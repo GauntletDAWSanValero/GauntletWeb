@@ -1,6 +1,9 @@
 const db = require("../Configuration/Database");
 
-// FIXME: Hay un hueco en la db, creo que es porque la lista empieza en 1 en vez de en 0
+/*
+    FIXME: Hay un hueco en la db, creo que es porque la lista empieza en 1 en vez de en 0. Pero es
+     posible que sea culpa de create-table.js
+   */
 
 async function insertTypeChart(req, res) {
     await Promise.all([
