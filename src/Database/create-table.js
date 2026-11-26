@@ -1,5 +1,7 @@
 const db = require("../Configuration/Database");
 
+// función para crear las tablas si no las tienes creadas
+
 async function createTables(req, res) {
     const type_chart_exists = await db.schema.hasTable("type_chart");
     const pokedex_exists = await db.schema.hasTable("pokedex");
@@ -23,10 +25,12 @@ async function createTables(req, res) {
             table.string("name").notNullable();
             table.string("boosted_stat")
                 .notNullable()
-                .checkIn(["hp", "atk", "def", "spa", "spd", "spe"]);
+                .defaultTo("none")
+                .checkIn(["hp", "atk", "def", "spa", "spd", "spe", "none"]);
             table.string("reduced_stat")
                 .notNullable()
-                .checkIn(["hp", "atk", "def", "spa", "spd", "spe"]);
+                .defaultTo("none")
+                .checkIn(["hp", "atk", "def", "spa", "spd", "spe", "none"]);
         })
     }
 
@@ -129,7 +133,7 @@ async function createTables(req, res) {
             table
                 .integer("met_location_id")
                 .references("location_id")
-                .inTable("wild_encounter_location_id")
+                .inTable("wild_encounter_location")
                 .onDelete("CASCADE")
                 .onUpdate("Cascade");
             table
